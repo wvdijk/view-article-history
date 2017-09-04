@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "View history",
+  "description": "Show edit history for this article",
+  "version": "1.0",
+  "content_scripts": [
+    {
+    "matches": ["*://www.nrc.nl/*"],
+    "js": ["content.js"]
+    }
+  ],
+  "background": {
+  "scripts": ["background.js"]
+},
+  "browser_action": {
+  "default_icon": "icon.png"
+  }
+}
