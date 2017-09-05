@@ -4,12 +4,23 @@ chrome.runtime.onMessage.addListener(
       (function(){
 
 		var url = window.location + '/history';
-		var req = new XMLHttpRequest();  
-		req.open('GET', url, false);   
-		req.send(null);  
+		var req = new XMLHttpRequest();
+		req.open('GET', url, false);
+		req.send(null);
 		if(req.status == 200) {
-			if (req.responseText.indexOf('wordpress_honk') > -1) { 
-				alert('Dit artikel is al bewerkt in Honk. Niks meer aan te doen: updaten kan alleen nog in Honk/Wordpress.');
+			if (req.responseText.indexOf('wordpress_honk') > -1) {
+				// onderstaande code van de Edit in Honk bookmarklet
+        var articleId = document.getAttribute('data-article-id');
+        if (!articleId) {
+          var m = location.pathname.match(/\-a(\d+)/);
+          if (m) {
+            articleId = m[1];
+          }
+        }
+        var editUrl = 'https://honk.nrc.nl/bvhw/?nrc-action=hub2import&article_id=' + articleId;
+        if (editUrl) {
+          window.open(editUrl, '_blank', null);
+        }
 			}
 		else {
 				alert('Dit artikel is nog niet geopend in Honk, bewerk het in GN4 tenzij het echt niet anders kan.');
