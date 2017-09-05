@@ -2,4 +2,4 @@
 Check NRC articles for Wordpress edits.
 
 # Todo
-Integrate with Edit in Honk
+Edit in Honk added. Adapted from the bookmarklet. Untested.
