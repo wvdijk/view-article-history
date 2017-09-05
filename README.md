@@ -1,2 +1,5 @@
 # view-article-history
-Check for NRC articles for Wordpress edits
+Check NRC articles for Wordpress edits.
+
+# Todo
+Integrate with Edit in Honk
