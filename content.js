@@ -10,14 +10,14 @@ chrome.runtime.onMessage.addListener(
 		if(req.status == 200) {
 			if (req.responseText.indexOf('wordpress_honk') > -1) {
 				// onderstaande code van de Edit in Honk bookmarklet
-        var articleId = document.getAttribute('data-article-id');
+        var articleId = document.body.getAttribute('data-article-id');
         if (!articleId) {
           var m = location.pathname.match(/\-a(\d+)/);
           if (m) {
             articleId = m[1];
           }
         }
-        var editUrl = 'https://honk.nrc.nl/bvhw/?nrc-action=hub2import&article_id=' + articleId;
+        var editUrl = 'https://honk.nrc.nl/bvhw/?nrc_action=hub2import&article_id=' + articleId + '&action=edit';
         if (editUrl) {
           window.open(editUrl, '_blank', null);
         }
