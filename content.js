@@ -31,7 +31,8 @@ function getEditUrl() {
         if (m) {
             articleId = m[1];
         } else {
-            console.log('Geen NRC-artikel-ID gevonden')
+            console.log('Geen NRC-artikel-ID gevonden');
+            return;
         }
     }
     return 'https://honk.nrc.nl/bvhw/?nrc_action=hub2import&article_id=' + articleId + '&action=edit';
