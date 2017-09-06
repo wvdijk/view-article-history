@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "View history",
-  "description": "Show edit history for this article",
-  "version": "1.1",
+  "description": "Check edit history before opening in Honk",
+  "version": "1.2",
   "content_scripts": [
     {
     "matches": ["*://www.nrc.nl/*"],
